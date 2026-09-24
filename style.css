@@ -57,3 +57,23 @@ body:before { background: radial-gradient(circle at 72% 12%, rgba(120, 91, 196, 
 .hero-copy:after { content: '✦'; position: absolute; top: -42px; right: 22%; color: var(--gold); font-size: 22px; opacity: .7; animation: princessSparkle 3s ease-in-out infinite; }
 .contact:after { animation: princessSparkle 4s ease-in-out infinite; }
 @keyframes princessSparkle { 0%, 100% { opacity: .3; transform: scale(.8) rotate(0deg); } 50% { opacity: 1; transform: scale(1.15) rotate(15deg); } }
+
+/* Staggered typography motion gives the page a living fairytale rhythm. */
+.section-label { animation: labelDrift 4s ease-in-out infinite; }
+.section-heading h2, .skills-head h2, .projects-head h2, .contact h2 { background: linear-gradient(110deg, var(--paper) 28%, var(--gold) 45%, var(--aqua) 58%, var(--paper) 72%); background-size: 250% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: textShimmer 7s linear infinite; }
+.section-heading h2 em, .skills-head h2 em, .projects-head h2 em, .contact h2 em { -webkit-text-fill-color: var(--aqua); }
+.about-copy p, .skills-head p, .projects-head p, .contact-note { animation: copyFloat 5s ease-in-out infinite; }
+.about-copy p:nth-child(2), .projects-head p { animation-delay: 1s; }
+.fact-row > div { animation: statLift 4s ease-in-out infinite; }
+.fact-row > div:nth-child(2) { animation-delay: .45s; }
+.fact-row > div:nth-child(3) { animation-delay: .9s; }
+.skill-item h3, .project-meta h3 { animation: titlePulse 4s ease-in-out infinite; }
+.skill-item:nth-child(2) h3, .project-card:nth-child(2) h3 { animation-delay: .7s; }
+.skill-item p, .project-meta p { animation: copyFloat 4.5s ease-in-out infinite; animation-delay: .3s; }
+.skill-number, .skill-item > strong, .project-meta span { animation: numberBlink 3.5s ease-in-out infinite; }
+@keyframes labelDrift { 0%, 100% { letter-spacing: .12em; transform: translateX(0); } 50% { letter-spacing: .18em; transform: translateX(4px); } }
+@keyframes textShimmer { 0% { background-position: 220% center; } 100% { background-position: -20% center; } }
+@keyframes copyFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes statLift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes titlePulse { 0%, 100% { letter-spacing: -.04em; } 50% { letter-spacing: -.015em; color: var(--aqua); } }
+@keyframes numberBlink { 0%, 100% { opacity: .65; } 50% { opacity: 1; color: var(--gold); } }
